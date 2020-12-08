@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<style>
+.yourElement {
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+<!--
+#toolTipBox {
+  display: none;
+  padding: 5;
+  font-size: 20px;
+  border: black solid 1px;
+  font-family: verdana;
+  position: absolute;
+  background-color: #ffd038;
+  color: 000000;
+}
+-->
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">JUNIPER FOX</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SNAGGLENATION</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT US</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">JUNIPER FOX</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img class="w3-animate-bottom" src="f21.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-left" src="f25.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-zoom" src="f4.jpg" style="width:100%" onclick="onClick(this)" >
+    </div>
+    
+   <div class="w3-quarter">
+      <img class="w3-animate-top" src="f2.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-right" src="f3.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-left" src="f17.jpg" style="width:100%" onclick="onClick(this)" >
+    </div>
+    
+    <div class="w3-quarter">
+      <img class="w3-animate-zoom" src="f7.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-bottom" src="f12.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-left" src="f16.jpg" style="width:100%" onclick="onClick(this)" >
+    </div>
+
+    <div class="w3-quarter">
+      <img class="w3-animate-right" src="f20.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-bottom" src="f18.jpg" style="width:100%" onclick="onClick(this)" >
+      <img class="w3-animate-zoom" src="f19.jpg" style="width:100%" onclick="onClick(this)" >
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4 class="animated infinite rubberBand delay-2s"><b>SNAGGLENATION</b></h4>
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h4>FAMILY</h4>
+      <p>Everyone has a story to tell, even animals. Meet the rest of our family and join our community of Animal Lovers.</p>
+    </div>
+  </div>
+
+<div class="w3-row-padding w3-margin-top">
+  <div class="w3-third">
+    <div class="w3-card"> 
+      <span id="toolTipBox" width="100%"></span>
+      <img src="f27.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('JUNIPER',this)">
+      <div class="w3-container">
+        <h5>JUNIPER</h5>
+        <p>Juniper is a tame North American Red Fox. We adopted her when she was only five weeks old after learning that she needed a home. I had worked with foxes in rescues in the past and with that hands on experience knew that I could give her the home she deserved.
+
+ Foxes, like minks and other plush animals have been bred for their fur for over a hundred years.  Juniper and foxes like Juniper are considered "domestic fur-bearing animals" and being that she is descended from animals that have spend many generations in captivity meant that she genetically lost many of her natural instincts. Unfortunately this meant that she would be unable to live naturally in the wild.
+
+And so began our journey with the snaggle-toothed queen. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <span id="toolTipBox" width="100%"></span>
+      <img src="moose.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('MOOSE',this)">
+      <div class="w3-container">
+        <h5>MOOSE</h5>
+        <p>Patient Moose. The Australian shepherd malamute mix. He's coming up on his seventh year with us and I wouldn't have it any other way. Moose came to us after his six siblings, and his mother were dropped off outside of a veterinary office after closing hours. His mother died of canine parvovirus shortly after being taken in.
+
+I had been volunteering at the time and as soon as I saw him I knew he was going to come home with me. He was the first dog I ever adopted, the first dog that I could call my own. He's a special soul and because of his patient nature he's helped many smaller animals learn to feel comfortable and safe before going to their forever homes. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <span id="toolTipBox" width="100%"></span>
+      <img src="Petunia.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('PETUNIA',this)">
+      <div class="w3-container">
+        <h5>PETUNIA</h5>
+        <p>Petunia, the white faced sugar glider. We found Petunia at a reptile convention being sold as an "easy pet" for small children, she was shaking and obviously terrified after being passed around between people for hours. We immediately told the vendor we would take her after seeing her condition. Upon bringing her home we realized she had quite a few health problems and some uncontrollable twitches due to being malnourished. After just a week of a proper diet she started to improve and is doing much better these days.
+
+We later found out that she has her own snaggle tooth which causes her tongue to hang out of her mouth, making her a perfect fit in our family of misfits. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-row-padding w3-margin-top">
+  <div class="w3-third">
+    <div class="w3-card">
+      <span id="toolTipBox" width="100%"></span>
+      <img src="Peach.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('PEACH',this)">
+      <div class="w3-container">
+        <h5>PEACH</h5>
+        <p>Meet Peach. Peach is Petunia's new companion. Like Petunia, Peach also came from poor living conditions. She had scores of issues due to improper diet. It caused her fur to be more yellow than cream, which is referred to as "staining". She also suffered from growth issues in both of her back legs after not receiving enough calcium. This causes her to have bowed back legs and while it doesn't currently inhibit her, it may cause her to have joint problems later in life. Sugar gliders can actually live 8-15 years in captivity. Peach had also been living in an unclean environment which caused her to have respiratory issues. After a few vet visits and being on antibiotics she's now doing much better and is happily spending her days cuddling with Petunia.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <span id="toolTipBox" width="100%"></span>
+      <img src="Olive.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('OLIVE',this)">
+      <div class="w3-container">
+        <h5>OLIVE</h5>
+        <p>Olive was found in a flower pot as a tiny kitten  before being brought to us, but has been our little flower ever since. 
+
+She's a small lady and is approaching her first year in our home.  She's now fully adjusted to living with us and spends most of her time in her natural habitat (cardboard boxes) and loves hanging out with her best friend, who is a felt lobster with catnip guts. She seems to be fueled by catnip and hate.
+
+Update: Olive has since moved to live with our prior partner, she's living her best life.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <span id="toolTipBox" width="100%"></span>
+      <img src="fig.jpg" style="width:100%" onclick="onClick(this)" border="0" onmouseover="toolTip('FIG',this)">
+      <div class="w3-container">
+        <h5>FIG</h5>
+        <p>Meet Fig. Fig came to us after being rescued by "SaveAFox". He was born on a fur farm and would have become part of someones coat if not for a tragic bacterial infection that caused him to lose his left foot, most of his toes on his remaining feet, and sight In his eye. He was surrendered after the fur farm would no longer be able to use his pelt due to the abnormalities.
+
+Now Fig is the sweetest animal in the family. He never ceases to surprise me with how loving and kind he is to not only myself, but all of the other animals that live with us. He is often the first one to befriend any of our foster animals and greats everyone with a happy smile.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Contact section -->
+  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:600px">
+      <h4 class="w3-center animated infinite flipInY delay-2s"><b>CONTACT US</b></h4>
+      <p>PLEASE COMPLETE THE FORM BELOW</p>
+      <img src="f0.png"style="padding:4px;width:50%">
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000);    
+}
+
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+<!--
+/* แสดงข้อความเมื่อนำเม้าส์ไปชี้  */
+
+var theObj="";
+
+function toolTip(text,me) {
+  theObj=me;
+  theObj.onmousemove=updatePos;
+  document.getElementById('toolTipBox').innerHTML=text;
+  document.getElementById('toolTipBox').style.display="block";
+  window.onscroll=updatePos;
+}
+
+function updatePos() {
+  var ev=arguments[0]?arguments[0]:event;
+  var x=ev.clientX;
+  var y=ev.clientY;
+  diffX=24;
+  diffY=0;
+  document.getElementById('toolTipBox').style.top  = y-2+diffY+document.body.scrollTop+ "px";
+  document.getElementById('toolTipBox').style.left = x-2+diffX+document.body.scrollLeft+"px";
+  theObj.onmouseout=hideMe;
+}
+function hideMe() {
+  document.getElementById('toolTipBox').style.display="none";
+}
+-->
+
+</script>
+
+</body>
+</html>
